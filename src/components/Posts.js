@@ -31,7 +31,8 @@ export default function Posts() {
           value={content}
         ></input>
         <button
-          onClick={() => {
+          onClick={(e) => {
+            e.preventDefault();
             if (title && content) {
               dispatch(addPost({ id: Math.random(), title, content }));
               setTitle("");
